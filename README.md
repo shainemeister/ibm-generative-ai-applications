@@ -15,6 +15,21 @@ This repository demonstrates practical skills in building intelligent chatbots a
 | [Project 5: PDF Chatbot](project_5-pdf-chatbot) | Upload PDF → ask questions and extract information | RAG, LangChain, PDF parsing |
 | [Project 6: Voice Translator](project_6-voice-translator) | Real-time speech translation assistant | STT + TTS + Translation LLM |
 
+## Repo Structure
+```
+ibm-generative-ai-applications-projects/
+├── README.md
+├── project_1-image-captioning/
+├── project_2-web-chatbot/
+├── project_3-voice-assistant/
+├── project_4-meeting-transcriber/
+├── project_5-pdf-chatbot/
+├── project_6-voice-translator/
+├── requirements.txt
+├── .gitignore
+└── LICENSE (MIT)
+```
+
 ## Tech Stack
 - **Python** (core)
 - **LLMs**: GPT-3, Llama 2 (via IBM watsonx & Hugging Face)
@@ -35,3 +50,4 @@ This repository demonstrates practical skills in building intelligent chatbots a
 git clone https://github.com/shainemeister/ibm-generative-ai-applications-projects.git
 cd ibm-generative-ai-applications-projects
 pip install -r requirements.txt
+```
