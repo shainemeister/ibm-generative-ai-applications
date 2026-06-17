@@ -1,6 +1,7 @@
-# installing required libraries in venv
-# Python verion 3.13.5
-# create and activate virtual environment
+# Global Requirements
+# Installing required libraries in venv
+# Python version 3.13.5
+# Create and activate virtual environment
 # python -m venv venv
 # source venv/bin/activate  # On Windows: venv\Scripts\activate
 # pip install -r requirements.txt
