@@ -1,30 +1,23 @@
-# Project 2: Simple Web Chatbot
+# Project 2: Web Chatbot
 
 ---
 
-<!> BELOW NEEDS UPDATING TO REFLECT THIS COURSE / MODULE 2 FOR PROJECT 2 <!>
-<!> USE BELOW AS A TEMPLATE FORMATE FOR README FILE <!>
+This project is part of the IBM Generative AI Engineering Professional Certificate (Course 6: Building Generative AI-Powered Applications with Python).
 
----
-
-This project is part of the IBM Generative AI Engineering Professional Certificate (Course 6).
-
-It demonstrates building an automated image captioning tool using the BLIP model from Hugging Face Transformers and a user-friendly web interface with Gradio.
+It demonstrates building a conversational AI chatbot similar to ChatGPT using open-source Large Language Models (LLMs) from Hugging Face, with conversation history management, and integrating it into a web interface using Flask.
 
 ## Features
 
-- **Local Directory Captioning**: Processes all images in a folder and generates meaningful captions.
-- **URL/Web Scraping Captioning**: Extracts and captions images from any webpage.
-- **Interactive Gradio Web App**: Upload images via browser for instant captions.
-- Supports both `blip-image-captioning-base` (lightweight) and can be upgraded to Blip2.
+- **Terminal Chatbot**: Interactive command-line chatbot powered by open-source LLMs.
+- **Conversation History**: Maintains recent context (last several turns) for coherent multi-turn conversations.
+- **Multiple Model Support**: Includes implementations for both seq2seq (BlenderBot) and modern causal chat models (SmolLM2).
+- **Web Integration (In Progress)**: Flask backend + frontend for browser-based chatting (planned next step).
 
 ## Project Files
 
-- `automate_local_captioner.py` – Batch process local images
-- `automate_url_captioner.py` – Caption images from a webpage
-- `image_captioning_app.py` – Gradio web interface
-- `sample_images/` – Test images
-- `myapp/` – Additional app structure (optional)
+- `chatbot.py` – Terminal chatbot using `facebook/blenderbot-400M-distill`
+- `chatbot_llm.py` – Terminal chatbot using `HuggingFaceTB/SmolLM2-360M-Instruct` with proper chat templates and system prompt
+- `requirements.txt` – Python dependencies for the project
 
 ## Installation
 
@@ -34,44 +27,38 @@ pip install -r requirements.txt
 
 ## Usage
 
-### 1. Local Captioning
+### 1. Terminal Chatbot (BlenderBot)
 ```bash
-python automate_local_captioner.py
+python chatbot.py
 ```
-Update `image_dir` in the script to point to your image folder.
+Type messages and press Enter. Type `exit` to quit. Maintains short conversation history.
 
-### 2. Web/URL Captioning
+### 2. Terminal Chatbot (SmolLM2 - Recommended for modern chat format)
 ```bash
-python automate_url_captioner.py
+python chatbot_llm.py
 ```
-Update the `URL` variable as needed.
+Uses structured chat roles and apply_chat_template. Type `exit` to quit.
 
-### 3. Gradio Web Interface (Recommended)
-```bash
-python image_captioning_app.py
-```
-Open the local URL shown in the terminal (usually http://127.0.0.1:7860).
+### 3. Web Chatbot Interface (Coming Next)
+Flask-powered web application with a simple HTML/JS frontend that communicates with the backend LLM.
 
 ## Screenshots
 
-**Gradio Interface**
+**Terminal Chatbot Demo**
 
-![Image Captioning App](image_captioning_app_screenshot.png)
-
-**Hello World Test App**
-
-![Hello Screenshot](hello_screenshot.png)
+*(Screenshots to be added after web interface completion)*
 
 ## Technologies Used
 
 - Python
-- Hugging Face Transformers (BLIP model)
-- Gradio
-- Pillow (PIL)
-- BeautifulSoup + requests (for URL mode)
+- Hugging Face Transformers
+- PyTorch
+- (Planned) Flask for web backend
+- HTML/CSS/JavaScript for frontend
 
 ## Learning Objectives Achieved
 
-- Implemented image captioning with BLIP from Hugging Face.
-- Built a user-friendly Gradio interface.
-- Adapted the tool for real-world scenarios (local files and web URLs).
+- Loaded and initialized open-source LLMs and tokenizers from Hugging Face.
+- Implemented conversation history management to provide context to the model.
+- Generated responses with controlled sampling parameters for natural dialogue.
+- Built foundation for integrating the chatbot into a Flask web application.
