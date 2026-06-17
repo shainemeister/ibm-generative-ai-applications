@@ -1,0 +1,14 @@
+# installing required libraries in venv
+# Python verion 3.13.5
+# create and activate virtual environment
+# python -m venv venv
+# source venv/bin/activate  # On Windows: venv\Scripts\activate
+# pip install -r requirements.txt
+
+langchain==0.1.11
+gradio==5.23.2
+transformers==4.38.2
+bs4==0.0.2
+requests==2.31.0
+torch==2.2.1
+pylint==4.0.5
