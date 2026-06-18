@@ -1,0 +1,9 @@
+# This file lists the dependencies for the chatbot application.
+# Source cloned from https://github.com/ibm-developer-skills-network/LLM_application_chatbot
+
+Flask
+Flask_Cors
+torch
+torchvision
+torchaudio
+transformers==4.*
