@@ -1,7 +1,5 @@
 # Project 2: Web Chatbot
 
----
-
 This project is part of the IBM Generative AI Engineering Professional Certificate (Course 6: Building Generative AI-Powered Applications with Python).
 
 It demonstrates building a conversational AI chatbot similar to ChatGPT using open-source Large Language Models (LLMs) from Hugging Face, with conversation history management, and integrating it into a web interface using Flask.
