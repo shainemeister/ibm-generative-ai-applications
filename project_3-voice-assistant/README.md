@@ -1,72 +1,71 @@
-# coding-project-template
-
-Source:
-```
-git clone https://github.com/ibm-developer-skills-network/bkrva-chatapp-with-voice-and-openai-outline.git
-```
-
-
-Template Readme format Below
-
-# Project 2: Web Chatbot
+# Project 3: Voice Assistant with LLM and Speech Capabilities
 
 This project is part of the IBM Generative AI Engineering Professional Certificate (Course 6: Building Generative AI-Powered Applications with Python).
 
-It demonstrates building a conversational AI chatbot similar to ChatGPT using open-source Large Language Models (LLMs) from Hugging Face, with conversation history management, and integrating it into a web interface using Flask.
+It demonstrates building a voice-enabled AI assistant using Flask, supporting both text and voice input/output, integrated with speech-to-text (STT), a Large Language Model for intelligence, and text-to-speech (TTS).
 
 ## Features
 
-- **Terminal Chatbot**: Interactive command-line chatbot powered by open-source LLMs.
-- **Conversation History**: Maintains recent context (last several turns) for coherent multi-turn conversations.
-- **Multiple Model Support**: Includes implementations for both seq2seq (BlenderBot) and modern causal chat models (SmolLM2).
-- **Web Integration (In Progress)**: Flask backend + frontend for browser-based chatting (planned next step).
+- **Dual Input Support**: Text messages or voice recording via browser microphone.
+- **Voice Output**: Spoken responses using TTS.
+- **Flask Backend**: Handles requests, processes audio, and coordinates STT → LLM → TTS pipeline.
+- **Docker Support**: Containerized deployment for consistent environments.
+- **Modern UI**: Light/dark mode toggle and responsive interface.
 
 ## Project Files
 
-- `chatbot.py` – Terminal chatbot using `facebook/blenderbot-400M-distill`
-- `chatbot_llm.py` – Terminal chatbot using `HuggingFaceTB/SmolLM2-360M-Instruct` with proper chat templates and system prompt
-- `requirements.txt` – Python dependencies for the project
+- `server.py` – Main Flask application (routes and orchestration).
+- `worker.py` – Background worker for processing tasks.
+- `Dockerfile` – Container configuration.
+- `requirements.txt` – Python dependencies.
+- `templates/index.html` – Frontend interface.
+- `static/` – CSS, JS, and assets.
+- `models/` – STT and TTS model configurations (lab-specific).
 
 ## Installation
 
 ```bash
+# Clone the repo
+git clone https://github.com/shainemeister/ibm-generative-ai-applications.git
+cd ibm-generative-ai-applications/project_3-voice-assistant
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
 ## Usage
 
-### 1. Terminal Chatbot (BlenderBot)
+### Local Development
 ```bash
-python chatbot.py
+python server.py
 ```
-Type messages and press Enter. Type `exit` to quit. Maintains short conversation history.
+Open `http://localhost:5000` in your browser.
 
-### 2. Terminal Chatbot (SmolLM2 - Recommended for modern chat format)
+### Docker Deployment
 ```bash
-python chatbot_llm.py
+docker build -t voice-assistant .
+docker run -p 5000:5000 voice-assistant
 ```
-Uses structured chat roles and apply_chat_template. Type `exit` to quit.
 
-### 3. Web Chatbot Interface (Coming Next)
-Flask-powered web application with a simple HTML/JS frontend that communicates with the backend LLM.
+
+**Note**: Full voice functionality (STT/TTS) requires IBM Watson service credentials, which are provided in the Coursera lab environment. For a fully local version using Ollama + open-source speech models, see the "Local Portfolio Adaptation" section below.
 
 ## Screenshots
 
-**Terminal Chatbot Demo**
-
-*(Screenshots to be added after web interface completion)*
+*(Add screenshots here after running the app — e.g., UI with voice recording, conversation flow)*
 
 ## Technologies Used
 
-- Python
-- Hugging Face Transformers
-- PyTorch
-- (Planned) Flask for web backend
-- HTML/CSS/JavaScript for frontend
+- Python + Flask
+- IBM Watson Speech-to-Text (STT) & Text-to-Speech (TTS)
+- OpenAI GPT-3 (or compatible LLM)
+- Docker for containerization
+- HTML, CSS, JavaScript (frontend with microphone access)
 
 ## Learning Objectives Achieved
 
-- Loaded and initialized open-source LLMs and tokenizers from Hugging Face.
-- Implemented conversation history management to provide context to the model.
-- Generated responses with controlled sampling parameters for natural dialogue.
-- Built foundation for integrating the chatbot into a Flask web application.
+- Built a full-stack voice-enabled AI assistant.
+- Integrated Speech-to-Text and Text-to-Speech services.
+- Orchestrated multi-step pipeline: Voice Input → Transcription → LLM Reasoning → Spoken Output.
+- Containerized the application with Docker.
+- Developed a responsive web interface for voice/text interaction.
