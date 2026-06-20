@@ -222,3 +222,8 @@ __*/
 DS*
 DS*/
 .DS_*
+
+# MISC Files
+.mp3
+.wav
+.mp4
