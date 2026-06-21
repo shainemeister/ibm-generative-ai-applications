@@ -12,7 +12,7 @@ This repository demonstrates practical skills in building intelligent chatbots a
 | [Project 2: Web Chatbot](project_2-web-chatbot) | Interactive chatbot similar to ChatGPT with web interface | Flask, HTML/CSS/JS, LLM integration |
 | [Project 3: Voice Assistant](project_3-voice-assistant) | Voice-enabled assistant (speech in → voice out) | IBM Watson STT/TTS, Python |
 | [Project 4: Meeting Transcriber](project_4-meeting-transcriber) | Transcribes meetings and produces concise summaries | Speech-to-Text, LLM summarization |
-| [Project 5: PDF Chatbot](project_5-pdf-chatbot) | Upload PDF → ask questions and extract information | RAG, LangChain, PDF parsing |
+| [Project 5: Generative AI with RAG](project_5-generative-ai-rag) | Upload PDF → ask questions and extract information | RAG, LangChain, PDF parsing |
 | [Project 6: Voice Translator](project_6-voice-translator) | Real-time speech translation assistant | STT + TTS + Translation LLM |
 
 ## Repo Structure
@@ -23,7 +23,7 @@ ibm-generative-ai-applications-projects/
 ├── project_2-web-chatbot/
 ├── project_3-voice-assistant/
 ├── project_4-meeting-transcriber/
-├── project_5-pdf-chatbot/
+├── project_5-generative-ai-rag/
 ├── project_6-voice-translator/
 ├── requirements.txt
 ├── .gitignore
