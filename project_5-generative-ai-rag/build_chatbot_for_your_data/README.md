@@ -89,6 +89,16 @@ The chatbot will retrieve relevant chunks from your PDF and generate answers gro
 - Built a functional web chatbot with Flask + LangChain
 - Gained practical experience with document loaders, vector stores, and retrieval chains
 
+## Original Lab Reference
+
+This implementation is based on the original IBM lab:
+
+```bash
+git clone https://github.com/ibm-developer-skills-network/wbphl-build_own_chatbot_without_open_ai.git
+```
+
+The original lab used IBM watsonx.ai with Llama models. This refactored version replaces that with a fully local Ollama + LangChain stack while preserving the core learning goals.
+
 ## Notes & Improvements
 
 - The implementation uses a custom GGUF model loaded via Ollama. For most users, switching to a standard model like `llama3` or `gemma2` in `worker.py` is recommended for easier setup.
